@@ -13,7 +13,7 @@ final class ExerciseService {
             throw URLError(.badURL)
         }
         var request = URLRequest(url: url)
-        request.addValue(Constants.API.exerciseDBApiKey, forHTTPHeaderField: "x-rapidapi-key")
+        request.addValue(Secrets.exerciseDBApiKey, forHTTPHeaderField: "x-rapidapi-key")
         request.addValue(Constants.API.exerciseDBHost,   forHTTPHeaderField: "x-rapidapi-host")
 
         let (data, _) = try await URLSession.shared.data(for: request)
